@@ -1,0 +1,11 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wry.dao.UsersDao">
+    <resultMap id="user_perm" type="com.wry.pojo.Users">
+        <collection property="permsList"
+                    column="id"
+                    ofType="string"
+                    select="com.wry.dao.PermsDao.getPermsByUserId"/>
+    </resultMap>
+</mapper>
